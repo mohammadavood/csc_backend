@@ -6,10 +6,12 @@ var logger = require('morgan');
 var dotenv = require('dotenv')
 
 //reading env variable
-const dotenveResult = dotenv.config();
-if(dotenveResult.error){
+if(process.env.ENVIRONMENT !== 'production'){
+  const dotenveResult = dotenv.config();
+  if(dotenveResult.error){
     console.log('error in dotenv loading: ',dotenveResult.parsed);
     throw dotenveResult.error;
+  }
 }
 
 var indexRouter = require('./routes/index');
