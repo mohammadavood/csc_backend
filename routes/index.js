@@ -321,7 +321,14 @@ router.post('/upload', attachConfig.single('attach'), function (req, res, next) 
             .then((user) => {
                 if (user) {
                     if (user.uploads.length) {
-                        user.uploads.push(req.file.filename);
+                        if (user.uploads.length >= 5) {
+                            res.status(400).send({
+                                success: false,
+                                message: 'you can upload just 5 files.'
+                            })
+                        }
+                        else
+                            user.uploads.push(req.file.filename);
                     }
                     else {
                         user.uploads = [];
