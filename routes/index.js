@@ -498,13 +498,7 @@ router.post('/answer', function (req, res, next) {
         newAnswer.inDesign = req.body.inDesign;
         newAnswer.skills = req.body.skills;
         newAnswer.favorites = req.body.favorites;
-        newAnswer.seo = req.body.seo;
-        newAnswer.frontEnd = req.body.frontEnd;
-        newAnswer.backEnd = req.body.backEnd;
-        newAnswer.devOps = req.body.devOps;
-        newAnswer.uiUx = req.body.uiUx;
-        newAnswer.ProductManagement = req.body.ProductManagement;
-        newAnswer.Test = req.body.Test;
+        newAnswer.experiences = req.body.experiences;
         newAnswer.Q1 = req.body.Q1;
         newAnswer.Q2 = req.body.Q2;
         newAnswer.Q3 = req.body.Q3;

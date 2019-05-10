@@ -10,35 +10,7 @@ var answerSchema = new mongoose.Schema({
         description: String,
         score: [String] // between 1 and 4
     },
-    seo: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    frontEnd: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    backEnd: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    dataBase: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    devOps: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    uiUx: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    ProductManagement: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    Test: {
+    experiences: {
         description: String,
         score: [String] // between 1 and 4
     },
