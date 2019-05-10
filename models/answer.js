@@ -2,35 +2,11 @@ var mongoose = require('mongoose');
 
 var answerSchema = new mongoose.Schema({
     userId: String,
-    inDesign: {
+    skills: {
         description: String,
         score: [String] // between 1 and 4
     },
-    photography: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    graphicDesign: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    composition: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    documentation: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    music: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    ejra: {
-        description: String,
-        score: [String] // between 1 and 4
-    },
-    translation: {
+    favorites: {
         description: String,
         score: [String] // between 1 and 4
     },

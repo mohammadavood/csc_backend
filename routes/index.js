@@ -496,13 +496,8 @@ router.post('/answer', function (req, res, next) {
             userId: req.headers.token
         });
         newAnswer.inDesign = req.body.inDesign;
-        newAnswer.photography = req.body.photography;
-        newAnswer.graphicDesign = req.body.graphicDesign;
-        newAnswer.documentation = req.body.documentation;
-        newAnswer.composition = req.body.composition;
-        newAnswer.music = req.body.music;
-        newAnswer.ejra = req.body.ejra;
-        newAnswer.translation = req.body.translation;
+        newAnswer.skills = req.body.skills;
+        newAnswer.favorites = req.body.favorites;
         newAnswer.seo = req.body.seo;
         newAnswer.frontEnd = req.body.frontEnd;
         newAnswer.backEnd = req.body.backEnd;
