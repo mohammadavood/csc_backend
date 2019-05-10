@@ -3,9 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var dotenv = require('dotenv')
+
+//reading env variable
+if(process.env.ENVIRONMENT !== 'production'){
+  const dotenveResult = dotenv.config();
+  if(dotenveResult.error){
+    console.log('error in dotenv loading: ',dotenveResult.parsed);
+    throw dotenveResult.error;
+  }
+}
 
 var indexRouter = require('./routes/index');
-
 var dataBaseConfig = require('./models/config');
 
 var app = express();
@@ -31,7 +40,8 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = process.env.DEBUG_MODE ? err : {};
 
   // render the error page
   res.status(err.status || 500);
